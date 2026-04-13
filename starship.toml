@@ -1,0 +1,94 @@
+# Starship Prompt Configuration for BerkeOS
+
+# Add new line before prompt
+add_newline = true
+
+# Prompt format
+format = """
+$all
+$character"""
+
+# Character configuration
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+# Directory configuration
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+read_only = " 🔒"
+read_only_style = "red"
+
+# Git configuration
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "bold purple"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold green"
+modified = "📝"
+staged = '$(echo "++")'
+untracked = "🤔"
+deleted = "🗑"
+renamed = "🔀"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+
+# Shell configuration
+[shell]
+style = "bold green"
+bash_fallback = true
+
+# Time configuration
+[time]
+format = "[$time]($style) "
+style = "bold yellow"
+disabled = false
+
+# Package version
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+
+[python]
+symbol = "🐍 "
+style = "yellow bold"
+python_binary = ["python", "python3"]
+
+[rust]
+symbol = "🦀 "
+style = "bold red"
+
+[golang]
+symbol = "🐹 "
+style = "bold cyan"
+
+# Command duration
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style) "
+style = "bold yellow"
+
+# Docker context
+[docker_context]
+symbol = "🐳 "
+
+# kubectl context
+[kubectl]
+symbol = "☸ "
+
+# Battery
+[[battery]]
+full_symbol = "🔥"
+charging_symbol = "⚡"
+discharging_symbol = "💧"
+unknown_symbol = "❓"
+empty_symbol = "🪫"
+style = "bold red"
+disabled = false
